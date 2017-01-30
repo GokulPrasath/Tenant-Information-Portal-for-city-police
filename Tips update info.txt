@@ -1,0 +1,1 @@
+this project is about developing an web poratl for uploading tenant information portal
