@@ -3,3 +3,4 @@ this project is about developing an web poratl for uploading tenant information 
 devishree- designing the views
 illakiya - studying bootstrap 
 mahalakshmi - study on laravel
+gokulprasath-desinging the module
