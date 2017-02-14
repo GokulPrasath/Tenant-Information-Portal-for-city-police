@@ -16,7 +16,7 @@ illakiya-study about laravel
 
 03/02/17
 devishree- designing the views
-illakiya - studying bootstrap 
+illakiya - studying about bootstrap 
 gokulprasath-designing the module
 
 07/02/17
