@@ -13,6 +13,11 @@ devishree- designing the views
 illakiya - studying bootstrap 
 gokulprasath-designing the module
 
+07/02/17
+devishree-studying bootstrap
+illakiya - studying laravel 
+gokulprasath-studying database connectivity
+
 10/02/17
 illakiya - study about laravel
 devishree - study about laravel
