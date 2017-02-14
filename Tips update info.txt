@@ -8,6 +8,11 @@ gokulprasath-desinging the module
 02/02/17
 gokulprasath-study about laravel
 
+03/02/17
+devishree- designing the views
+illakiya - studying bootstrap 
+gokulprasath-designing the module
+
 10/02/17
 illakiya - study about laravel
 devishree - study about laravel
