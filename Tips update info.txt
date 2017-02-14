@@ -18,6 +18,12 @@ devishree-studying bootstrap
 illakiya - studying laravel 
 gokulprasath-studying database connectivity
 
+08/02/17
+devishree-studying laravel
+illakiy-designing the views
+gokulprasath-studying database connectivity
+
+
 10/02/17
 illakiya - study about laravel
 devishree - study about laravel
