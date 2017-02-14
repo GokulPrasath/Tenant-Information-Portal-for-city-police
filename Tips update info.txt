@@ -31,3 +31,9 @@ devishree - study about laravel
 13/02/17
 illakiya - study about database connectivity
 gokulprasath - validation
+
+14/02/17
+devishree-creating database
+illakiya -creating database
+gokulprasath-authentication
+
