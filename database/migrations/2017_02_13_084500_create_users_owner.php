@@ -15,6 +15,15 @@ class CreateUsersOwner extends Migration
     {
         Schema::create('owner', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('address');
+            $table->integer('mobno');
+            $table->string('email');
+            $table->string('authority');
+            $table->binary('idproof');
+            $table->integer('agreementno');
+            $table->binary('agreementdocs');
+            $table->string('station area');
             $table->timestamps();
         });
     }

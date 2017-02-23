@@ -15,6 +15,10 @@ class CreateUsersTenfam extends Migration
     {
         Schema::create('tenfam', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('gender');
+            $table->integer('age');
+            $table->string('relation');
             $table->timestamps();
         });
     }

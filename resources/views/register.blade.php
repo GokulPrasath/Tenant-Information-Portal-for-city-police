@@ -71,11 +71,13 @@
          </div>
        </div>
        <div class="col-lg-5 col-md-6 col-sm-6 ">
-         <label class="control-label col-lg-4 col-md-4 col-sm-4 " for="policeno">Police Badge No</label>
+         <label class="control-label col-lg-4 col-md-4 col-sm-4 " for="area">Policestation Area</label>
          <div class="col-lg-8 col-md-8 col-sm-8 ">
-             <input type="number" class="form-control" name="opoliceno" id="policeno" >
+             <input type="text" class="form-control" name="oarea" id="area" >
          </div>
        </div>
+       <br/>
+       <br/>
        </div>
      </div>
 	   <br/>

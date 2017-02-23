@@ -1,7 +1,8 @@
 @extends('layouts.mainlayout')
 
 @section('content')
-  <form id="cadmin" class="form-horizontal col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-lg-8 col-md-8 col-sm-8 "action="{{ url('/dashboard') }}">
+  <form  class="form-horizontal col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-lg-8 col-md-8 col-sm-8 " method="post" action="{{ url('/login') }}">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="container-fluid">
       <div class="panel panel-primary">
       <div class="panel panel-header">
@@ -10,9 +11,9 @@
       <div class="panel panel-body ">
 	  <br/>
     <div class="col-lg-10 col-md-10 col-sm-10">
-      <label class="control-label col-lg-4 col-md-4 col-sm-4" for="name">Badge Id</label>
+      <label class="control-label col-lg-4 col-md-4 col-sm-4" for="bgid">Badge Id</label>
       <div class="col-lg-8 col-md-8 col-sm-8 ">
-          <input type="text" class="form-control" name="oname" id="name" placeholder="Enter Badge Id" required="required">
+          <input type="number" maxlength="10" class="form-control" name="bgid" id="bgid" placeholder="Enter Badge Id" required="required">
       </div>
     </div>
     <br/>
@@ -46,7 +47,4 @@
 <br/>
 </div>
 </form>
-<script>
-$("cadmin").validate();
-</script>
 @endsection

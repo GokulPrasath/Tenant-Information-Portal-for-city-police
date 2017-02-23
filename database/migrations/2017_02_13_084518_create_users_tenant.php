@@ -15,6 +15,12 @@ class CreateUsersTenant extends Migration
     {
         Schema::create('tenant', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('address');
+            $table->integer('mobno');
+            $table->string('email');
+            $table->binary('pic');
+            $table->binary('idproof');
             $table->timestamps();
         });
     }

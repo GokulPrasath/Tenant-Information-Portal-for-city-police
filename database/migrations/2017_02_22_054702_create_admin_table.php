@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePoliceTable extends Migration
+class CreateAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePoliceTable extends Migration
      */
     public function up()
     {
-        Schema::create('police', function (Blueprint $table) {
+        Schema::create('admin', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('policename');
-			$table->string('badgeid');
-			$table->string('station area');
+			$table->integer('badgeid');
+			$table->string('password');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePoliceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('police');
+        Schema::dropIfExists('admin');
     }
 }

@@ -35,3 +35,5 @@ Route::get('/report', function () {
 Route::get('/polreport', function () {
     return view('polreport');
 });
+Route::post('policereg','PoliceController@create');
+Route::post('admin','AdminController@show');
