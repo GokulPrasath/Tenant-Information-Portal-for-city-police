@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use DB;
 use Log;
@@ -12,13 +11,17 @@ use Redirect;
 class AdminController extends Controller
 {
     //
-    public function show(){
-    //  $police = new Police;
-    //  $ad->badgeid=Input::get('bgid');
-      //$ad1->password=Input::get('passwd');
-      $ad=Admin::select('badgeid','password')
-                ->where('badgeid','=',12345)
-      //$admins=Admin::find($ad,$ad1);
-		return view('dashboard');
+    public function check(){
+      $admin = new Admin;
+      $admin=Admin::all();
+      $badge=Input::get('bgid');
+      $pass=Input::get('passwd');
+foreach($admin as $admins){
+if($badge==$admins->badgeid && $pass==$admins->password )
+{
+        return Redirect::to('dashboard');
+}
+}
+  return Redirect::to('admin');
     }
 }

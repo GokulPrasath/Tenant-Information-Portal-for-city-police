@@ -1,13 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.dashlayout')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+<div id="page-wrapper">
+      <div class="container-fluid col-lg-offset-1 col-lg-9">
+       <div class="panel panel-primary">
+        <div class="panel panel-header">
+          <h3>Police Registration</h3>
+                </div>
+        <div class="panel panel-body ">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -19,6 +20,45 @@
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+						<div class="form-group{{ $errors->has('badgeid') ? ' has-error' : '' }}">
+                            <label for="badgeid" class="col-md-4 control-label">Badgeid</label>
+
+                            <div class="col-md-6">
+                                <input id="badgeid" type="number" class="form-control" name="badgeid" value="{{ old('badgeid') }}" required autofocus>
+
+                                @if ($errors->has('badgeid'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('badgeid') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('stationame') ? ' has-error' : '' }}">
+                            <label for="stationame" class="col-md-4 control-label">Police Station Name</label>
+
+                            <div class="col-md-6">
+                                <input id="stationame" type="text" class="form-control" name="stationame" value="{{ old('stationame') }}" required autofocus>
+
+                                @if ($errors->has('stationame'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('stationame') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('stationarea') ? ' has-error' : '' }}">
+                            <label for="stationarea" class="col-md-4 control-label">Police Station Area</label>
+
+                            <div class="col-md-6">
+                                <input id="area" type="text" class="form-control" name="stationarea" value="{{ old('stationarea') }}" required autofocus>
+
+                                @if ($errors->has('stationarea'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('stationarea') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -62,7 +102,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" >
                                     Register
                                 </button>
                             </div>
@@ -72,5 +112,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

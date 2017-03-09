@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth\login');
 });
 Route::get('/login', function () {
     return view('login');
@@ -23,11 +23,11 @@ Route::get('/admin', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-Route::get('/policereg', function () {
-    return view('policereg');
-});
 Route::get('/register', function () {
     return view('register');
+});
+Route::get('/agreement', function () {
+    return view('agreement');
 });
 Route::get('/report', function () {
     return view('report');
@@ -35,5 +35,17 @@ Route::get('/report', function () {
 Route::get('/polreport', function () {
     return view('polreport');
 });
-Route::post('policereg','PoliceController@create');
-Route::post('admin','AdminController@show');
+Route::get('/adminreport', function () {
+    return view('adminreport');
+});
+Route::get('/family', function () {
+    return view('family');
+});
+Route::get('/tenant', function () {
+    return view('tenant');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::get('/adminreport', 'UserController@show');

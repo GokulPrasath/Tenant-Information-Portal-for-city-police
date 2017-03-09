@@ -1,6 +1,6 @@
 @extends('layouts.dashlayout')
 
-@section('content') 
+@section('content')
 <div id="page-wrapper">
   <div class="container-fluid">
                <div class="row">
@@ -11,15 +11,15 @@
                    </div>
                </div>
                <div class="row">
-                   <div class="col-lg-3 col-md-6">
+                   <div class="col-lg-4 col-md-4">
                        <div class="panel panel-primary">
                            <div class="panel-heading">
                                <div class="row">
                                    <div class="col-xs-3">
-                                       <i class="fa fa-comments fa-5x"></i>
+                                   <i class="fa fa-support fa-5x"></i>
                                    </div>
                                    <div class="col-xs-9 text-right">
-                                       <div class="huge">0</div>
+                                       <div class="huge">3</div>
                                        <div>Tenants Registration</div>
                                    </div>
                                </div>
@@ -33,7 +33,7 @@
                            </a>
                        </div>
                    </div>
-                   <div class="col-lg-3 col-md-6">
+                   <div class="col-lg-4 col-md-4">
                        <div class="panel panel-green">
                            <div class="panel-heading">
                                <div class="row">
@@ -41,7 +41,7 @@
                                        <i class="fa fa-tasks fa-5x"></i>
                                    </div>
                                    <div class="col-xs-9 text-right">
-                                       <div class="huge">0</div>
+                                       <div class="huge">5</div>
                                        <div>Police Registration</div>
                                    </div>
                                </div>
@@ -55,7 +55,7 @@
                            </a>
                        </div>
                    </div>
-                   <div class="col-lg-3 col-md-6">
+                   <div class="col-lg-4 col-md-4">
                        <div class="panel panel-yellow">
                            <div class="panel-heading">
                                <div class="row">
@@ -63,8 +63,8 @@
                                        <i class="fa fa-shopping-cart fa-5x"></i>
                                    </div>
                                    <div class="col-xs-9 text-right">
-                                       <div class="huge">0</div>
-                                       <div>Requests</div>
+                                       <div class="huge">4</div>
+                                       <div>Police Stations</div>
                                    </div>
                                </div>
                            </div>

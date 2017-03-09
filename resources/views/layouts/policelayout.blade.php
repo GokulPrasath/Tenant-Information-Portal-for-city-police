@@ -7,6 +7,7 @@
  <link rel="stylesheet" href="css/bootstrap.min.css">
  <link href="css/navbar.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
  <script type="text/javascript" src="js/jquery-3.1.1.min.js" media="all"></script>
  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
@@ -15,23 +16,23 @@
       <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="http://127.0.0.1:8000/login">Tenant Information portal</a>
+              <a class="navbar-brand" href="{{ url('/login') }}">Tenant Information portal</a>
             </div>
             <div class="nav navbar-right top-nav">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="http://127.0.0.1:8000/login">Home</a></li>
+              <li class="active"><a href="{{ url('/login') }}">Home</a></li>
               <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Police User <b class="caret"></b></a>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>{{ Auth::user()->name }}<b class="caret"></b></a>
                           <ul class="dropdown-menu">
                               <li>
                                   <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                               </li>
                               <li>
-                                  <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                                <a href="#"><i class="fa fa-fw fa-gear"></i>ChangePassword</a>
                               </li>
                               <li class="divider"></li>
                               <li>
-                                  <a href="http://127.0.0.1:8000/login"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                                  <a href="{{ url('/login') }}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                               </li>
                           </ul>
                       </li>
@@ -40,8 +41,8 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li><a href="http://127.0.0.1:8000/register">Agreement</a></li>
-            <li><a href="http://127.0.0.1:8000/polreport">Reports</a></li>
+            <li><a href="{{ url('/register') }}"><i class="fa fa-fw fa-edit"></i>Agreement</a></li>
+            <li><a href="{{ url('/polreport') }}"><i class="fa fa-fw fa-file"></i>Reports</a></li>
          </ul>
         </div>
       </nav>

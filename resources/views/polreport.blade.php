@@ -1,4 +1,4 @@
-@extends('layouts.policelayout')
+@extends('layouts.authenticate')
 
 @section('content')
 @endsection
