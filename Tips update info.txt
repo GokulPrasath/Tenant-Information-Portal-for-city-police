@@ -95,3 +95,6 @@ devishree-database connectivity
 illakiya-study on java script
 mahalakshmi-Study on mysql
 gokulprasath-bug fixes
+
+09/03/17
+illakiya-Study on jquery
