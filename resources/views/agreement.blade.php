@@ -5,7 +5,8 @@
   <br/>
   <br/>
   <br/>
-  <form class="form-horizontal col-lg-offset-2 col-md-offset-2 col-lg-10 col-md-10 " method="post" action="{{ url('/agreement') }}">
+  <br/>
+  <form class="form-horizontal col-lg-offset-2 col-md-offset-2 col-lg-10 col-md-10 " method="post" action="{{ url('/family') }}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="container-fluid">
       <div class="panel panel-primary">
@@ -61,7 +62,7 @@
     <div class="col-lg-5 col-md-6 col-sm-6 ">
       <label class="control-label col-lg-4 col-md-4 col-sm-4" for="propdoc">Property documents</label>
       <div class="col-lg-8 col-md-8 col-sm-8 ">
-        <input type="file" class="form-control" name="opropimg" id="propdoc" >
+        <input type="file" class="form-control" name="opropdoc" id="propdoc" >
       </div>
      </div>
      <br/>
@@ -76,11 +77,11 @@
      <div class="col-lg-5 col-md-6 col-sm-6 ">
        <label class="control-label col-lg-4 col-md-4 col-sm-4" for="area">Police Station Area</label>
        <div class="col-lg-8 col-md-8 col-sm-8 ">
-       <select type="text" class="form-control" name="area" id="area" placeholder="Enter Police Station Area"  required="required">
-         <option>Podanur</option>
-         <option>Ukkadam</option>
-         <option>Coimbatore</option>
-         <option>Saravanampatti</option>
+       <select type="text" class="form-control" name="oarea" id="area" placeholder="Enter Police Station Area"  required="required">
+         @foreach(App\Station::station() as $stations)
+         <option>{{ $stations->stationarea }}</option>
+         @endforeach
+
        </select>
 
            <!--<input type="text" class="form-control" name="stationarea" id="area" placeholder="Enter Police Station Area"  required="required">-->
@@ -136,43 +137,14 @@
     <br/>
     <br/>
     <div class="col-lg-5 col-md-6 col-sm-6 ">
-      <label class="control-label col-lg-4 col-md-4 col-sm-4" for="tenantpic">Tenant Photo</label>
+      <label class="control-label col-lg-4 col-md-4 col-sm-4" for="tpic">Tenant Photo</label>
       <div class="col-lg-8 col-md-8 col-sm-8 ">
-        <input type="text" class="form-control" name="ttenantpic" id="tenantpic">
+        <input type="file" class="form-control" name="tpic" id="tpic">
       </div>
     </div>
     <br/>
     <br/>
     <br/>
-    <h3 style="color:blue">Tenant Family Information</h3>
-     <br/>
-    <div class="col-lg-5 col-md-6 col-sm-6 ">
-      <label class="control-label col-lg-4 col-md-4 col-sm-4" for="tenantpic">FatherName</label>
-      <div class="col-lg-8 col-md-8 col-sm-8 ">
-        <input type="text" class="form-control" name="tfathername" id="tfathername">
-      </div>
-    </div>
-     <div class="col-lg-5 col-md-6 col-sm-6 ">
-        <label class="control-label col-lg-4 col-md-4 col-sm-4" for="tenantpic">MotherName</label>
-        <div class="col-lg-8 col-md-8 col-sm-8 ">
-          <input type="text" class="form-control" name="tmothername" id="tmothername">
-        </div>
-      </div>
-      <br/>
-      <br/>
-      <br/>
-       <div class="col-lg-5 col-md-6 col-sm-6 ">
-          <label class="control-label col-lg-4 col-md-4 col-sm-4" for="tenantpic">SpouseName</label>
-          <div class="col-lg-8 col-md-8 col-sm-8 ">
-            <input type="text" class="form-control" name="tspousename" id="tspousename">
-          </div>
-        </div>
-         <div class="col-lg-5 col-md-6 col-sm-6 ">
-            <label class="control-label col-lg-4 col-md-4 col-sm-4" for="tenantpic">ChildrenNames</label>
-            <div class="col-lg-8 col-md-8 col-sm-8 ">
-              <input type="text" class="form-control" name="tchildname" id="tchildname">
-            </div>
-          </div>
   </div>
   </div>
   <br/>
@@ -180,7 +152,7 @@
   <div class="col-sm-10 col-md-10 col-lg-10">
   </div>
   <div class="col-sm-1 col-md-1 col-lg-1">
-    <button type="submit" class="btn btn-info btn-lg" >Submit</button>
+    <button type="submit" class="btn btn-info btn-lg" >Next</button>
   </div>
   <br/>
   <br/>

@@ -5,13 +5,13 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <!-- CSRF Token -->
- <meta name="csrf-token" content="{{ csrf_token() }}"> <link rel="stylesheet" href="css/bootstrap.min.css">
+ <meta name="csrf-token" content="{{ csrf_token() }}">
  <link rel="stylesheet" href="css/bootstrap.min.css">
    <link href="css/style.css" rel="stylesheet">
-   <script src="{{ asset('js/app.js') }}"></script>
    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
  <script type="text/javascript" src="js/jquery-3.1.1.min.js" media="all"></script>
  <script type="text/javascript" src="js/jquery.validate.js" media="all"></script>
+ <script type="text/javascript" src="js/bootstrap.min.js"></script>
  <script>
      window.Laravel = {!! json_encode([
          'csrfToken' => csrf_token(),
@@ -20,29 +20,19 @@
 </head>
 <body>
     <div id="app">
-
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                        <nav class="navbar navbar-inverse">
-                           <div class="container-fluid">
-                               <div class="navbar-header">
-                                <a class="navbar-brand" href="{{ url('/login') }}">Tenant Information portal</a>
-                               </div>
-                               <div class="nav navbar-right top-nav">
-                                 <ul class="nav navbar-nav">
-                                  <li class="active"><a href="{{ url('/login') }}">Home</a></li>
-                                  <li><a href="{{ url('/admin') }}"><i class="fa fa-user"></i>Admin</a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </nav>
-                        @else
                         <nav class="navbar navbar-inverse navbar-fixed-top">
                                 <div class="container-fluid">
                                   <div class="navbar-header">
                                     <a class="navbar-brand" href="{{ url('/login') }}">Tenant Information portal</a>
                                   </div>
                                    <div class="nav navbar-right top-nav">
+                                    <ul class="nav navbar-nav">
+                                     <li><img src="/uploads/avatars/{{ Auth::user()->avatar}}" style="width:32px; height:32px; position:absolute; top:10px;left=10px;border-radius=50%"><span class="caret"></span></li>
+                                         <li>&nbsp;
+                                           &nbsp;
+                                             &nbsp;
+                                               &nbsp;
+                                         </li>
                                               <li class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                                   {{ Auth::user()->name }} <span class="caret"></span>
@@ -50,11 +40,12 @@
 
                                                 <ul class="dropdown-menu" role="menu">
                                                   <li>
-                                                      <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                                      <a href="{{ url('/profile') }}"><i class="fa fa-fw fa-user"></i> Profile</a>
                                                   </li>
                                                   <li>
-                                                      <a href="#"><i class="fa fa-fw fa-gear"></i>Password</a>
+                                                      <a href="{{ url('/password') }}"><i class="fa fa-fw fa-gear"></i>Change Password</a>
                                                   </li>
+
                                           <li>
                                               <a href="{{ route('logout') }}"
                                                   onclick="event.preventDefault();
@@ -78,8 +69,6 @@
                                </ul>
                               </div>
                             </nav>
-                        @endif
-
         @yield('content')
     </div>
 

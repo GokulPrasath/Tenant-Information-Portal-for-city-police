@@ -1,7 +1,7 @@
-@extends('layouts.mainlayout')
+@extends('layouts.app')
 
 @section('content')
-<form class="form-horizontal" role="form" method="POST" action="#">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/login') }}">
                        {{ csrf_field() }}
    <div class="container-fluid col-lg-offset-2 col-lg-8">
      <div class="panel panel-primary">
@@ -11,6 +11,7 @@
      <div class="panel panel-body ">
    <br/>
 <div class="form-group{{ $errors->has('badgeid') ? ' has-error' : '' }}">
+  <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                        <label for="badgeid" class="col-md-4 control-label">Badgeid</label>
 
                                        <div class="col-md-6">
@@ -54,7 +55,7 @@
                                    Login
                                </button>
 
-                               <a class="btn btn-link" href="{{ route('password.request') }}">
+                               <a class="btn btn-link" href="{{ url('/admin/password/reset') }}">
                                    Forgot Your Password?
                                </a>
                            </div>

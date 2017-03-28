@@ -54,11 +54,28 @@
                             <label for="stationarea" class="col-md-4 control-label">Police Station Area</label>
 
                             <div class="col-md-6">
-                                <input id="area" type="text" class="form-control" name="stationarea" value="{{ old('stationarea') }}" required autofocus>
-
+                                <select type="text" class="form-control" name="stationarea" id="area" placeholder="Enter Police Station Area" value="{{ old('stationarea') }}" required autofocus>
+                                  @foreach(App\Station::station() as $stations)
+                                  <option>{{ $stations->stationarea }}</option>
+                                  @endforeach
+                                </select>
                                 @if ($errors->has('stationarea'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('stationarea') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('avatar') ? ' has-error' : '' }}">
+                            <label for="avatar" class="col-md-4 control-label">Police Image</label>
+
+                            <div class="col-md-6">
+                                <input id="area" type="file" class="form-control" name="avatar" value="{{ old('avatar') }}" required autofocus>
+
+                                @if ($errors->has('avatar'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('avatar') }}</strong>
                                     </span>
                                 @endif
                             </div>

@@ -11,6 +11,8 @@
  <script type="text/javascript" src="js/jquery-3.1.1.min.js" media="all"></script>
  <script type="text/javascript" src="js/bootstrap.min.js"></script>
  <script type="text/javascript" src="js/jquery.validate.js" media="all"></script>
+
+
 </head>
 <body>
     <div id="wrapper">
@@ -21,20 +23,34 @@
             </div>
             <div class="nav navbar-right top-nav">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="{{ url('/login') }}">Home</a></li>
+              <li><img src="/uploads/avatars/{{ Auth::guard('admins')->user()->avatar }}" style="width:32px; height:32px; position:absolute; top:10px;left=10px;border-radius=50%"><span class="caret"></span></li>
+                  <li>&nbsp;
+                    &nbsp;
+                      &nbsp;
+                        &nbsp;
+                  </li>
               <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Admin User <b class="caret"></b></a>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>{{ Auth::guard('admins')->user()->name }}<b class="caret"></b></a>
                           <ul class="dropdown-menu">
                               <li>
-                                  <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                  <a href="/aprofile"><i class="fa fa-fw fa-user"></i> Profile</a>
                               </li>
                               <li>
-                                  <a href="#"><i class="fa fa-fw fa-gear"></i>ChangePassword</a>
+                                  <a href="{{ url('/adminpassword') }}"><i class="fa fa-fw fa-gear"></i>Change Password</a>
                               </li>
                               <li class="divider"></li>
-                              <li>
-                                  <a href="{{ url('/admin') }}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                              </li>
+                             <li>
+                                    <a href="{{ url('/admin/logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-fw fa-power-off"></i>Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST"
+                                          style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
                           </ul>
                       </li>
             </ul>
@@ -50,6 +66,9 @@
                   <li>
                       <a href="{{ url('/register') }}"><i class="fa fa-fw fa-edit"></i>Register</a>
                   </li>
+                  <li>
+                      <a href="{{ url('/station') }}"><i class="fa fa-fw fa-edit"></i>Police Station</a>
+                  </li>
                         </ul>
                     </li>
             <li><a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-file"></i>Reports<i class="fa fa-fw fa-caret-down"></i></a>
@@ -58,7 +77,7 @@
           <a href="{{ url('/adminreport') }}"><i class="fa fa-fw fa-table"></i>PoliceReport</a>
       </li>
       <li>
-          <a href="{{ url('/report') }}"><i class="fa fa-fw fa-table"></i>TenantReport</a>
+          <a href="{{ url('/report') }}"><i class="fa fa-fw fa-table"></i>AgreementReport</a>
       </li>
             </ul>
           </li>
