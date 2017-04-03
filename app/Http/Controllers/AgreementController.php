@@ -13,6 +13,7 @@ use Redirect;
 use Datatables;
 use Auth;
 use Intervention\Image\Facades\Image as Image;
+use App\DataTables\UsersDataTable;
 
 class AgreementController extends Controller
 {
@@ -84,5 +85,9 @@ $agreements = DB::table('agreements')->select('*')->where('ostationarea','=',$us
      ->make(true);
 
 }
+public function index(UsersDataTable $dataTable)
+    {
+        return $dataTable->render('users');
+    }
 
 }

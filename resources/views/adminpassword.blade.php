@@ -5,7 +5,7 @@
 <br/>
 <br/>
 
-<div class="container-fluid  col-lg-offset-1 col-lg-10">
+<div class="container-fluid  col-lg-offset-1 col-lg-8">
  <div class="panel panel-primary">
   <div class="panel panel-header">
     <h3>Password</h3>
@@ -14,7 +14,7 @@
 <form class="form-horizontal  " role="form" method="POST" action="{{ url('adminpassword') }}">
     {{ csrf_field() }}
 
-<div class="col-lg-8 col-md-8 col-sm-8 form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+<div class="col-lg-12 col-md-12 col-sm-12 form-group{{ $errors->has('password') ? ' has-error' : '' }}">
   <label class="control-label col-lg-4 col-md-4 col-sm-4" for="password"><h4>Change Password</h4></label>
   <div class="col-lg-8 col-md-8 col-sm-8 ">
     <input id="password" type="password" class="form-control" name="password" required>
@@ -26,7 +26,7 @@
     @endif
   </div>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 form-group">
+<div class="col-lg-12 col-md-12 col-sm-12 form-group">
   <label class="control-label col-lg-4 col-md-4 col-sm-4" for="password-confirm"><h4>Confirm Password</h4></label>
   <div class="col-lg-8 col-md-8 col-sm-8 ">
     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>

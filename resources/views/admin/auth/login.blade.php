@@ -12,7 +12,7 @@
    <br/>
 <div class="form-group{{ $errors->has('badgeid') ? ' has-error' : '' }}">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                       <label for="badgeid" class="col-md-4 control-label">Badgeid</label>
+                                       <label for="badgeid" class="col-md-4 control-label">BadgeId</label>
 
                                        <div class="col-md-6">
                                            <input id="badgeid" type="number" class="form-control" name="badgeid" value="{{ old('badgeid') }}" required autofocus>
@@ -52,7 +52,7 @@
                        <div class="form-group">
                            <div class="col-md-8 col-md-offset-4">
                                <button type="submit" class="btn btn-primary">
-                                   Login
+                                  <i class="fa fa-btn fa-sign-in"></i> Login
                                </button>
 
                                <a class="btn btn-link" href="{{ url('/admin/password/reset') }}">

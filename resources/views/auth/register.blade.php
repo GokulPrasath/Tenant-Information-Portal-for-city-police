@@ -28,7 +28,7 @@
                             <label for="badgeid" class="col-md-4 control-label">Badgeid</label>
 
                             <div class="col-md-6">
-                                <input id="badgeid" type="number" class="form-control" name="badgeid" value="{{ old('badgeid') }}" required autofocus>
+                                <input id="badgeid"  type="number" class="form-control" name="badgeid" value="{{ old('badgeid') }}" required autofocus>
 
                                 @if ($errors->has('badgeid'))
                                     <span class="help-block">
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('avatar') ? ' has-error' : '' }}">
-                            <label for="avatar" class="col-md-4 control-label">Police Image</label>
+                            <label for="avatar" class="col-md-4 control-label">Profile Image</label>
 
                             <div class="col-md-6">
                                 <input id="area" type="file" class="form-control" name="avatar" value="{{ old('avatar') }}" required autofocus>
@@ -120,7 +120,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary" >
-                                    Register
+                                    <i class="fa fa-btn fa-sign-in"></i> Register
                                 </button>
                             </div>
                         </div>

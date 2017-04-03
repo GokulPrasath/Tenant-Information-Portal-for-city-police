@@ -1,7 +1,13 @@
-@extends('app')
+@extends('layouts.dashlayout')
 
 @section('content')
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="col-lg-8">
 {!! $dataTable->table() !!}
+</div>
 @endsection
 
 @push('scripts')

@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::resource('users', 'AgreementController');
 Route::get('demo', function () {
     return view('demo');
 });
@@ -108,3 +108,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 });
 
 Route::get('dashboard', 'UserController@googleLineChart');
+
+Route::post('station/{stationId}/edit', 'StationController@postEdit');
+Route::get('station/{stationId}/edit', ['as' => 'update/station', 'uses' => 'StationController@getEdit']);

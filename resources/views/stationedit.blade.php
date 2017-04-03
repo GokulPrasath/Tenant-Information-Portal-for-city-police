@@ -170,77 +170,9 @@
       color: #fff;
   }
 
-  /* Flot Chart Containers */
-
-  .flot-chart {
-      display: block;
-      height: 400px;
-  }
-
-  .flot-chart-content {
-      width: 100%;
-      height: 100%;
-  }
 
   /* Custom Colored Panels */
 
-  .huge {
-      font-size: 40px;
-  }
-
-  .panel-green {
-      border-color: #5cb85c;
-  }
-
-  .panel-green > .panel-heading {
-      border-color: #5cb85c;
-      color: #fff;
-      background-color: #5cb85c;
-  }
-
-  .panel-green > a {
-      color: #5cb85c;
-  }
-
-  .panel-green > a:hover {
-      color: #3d8b3d;
-  }
-
-  .panel-red {
-      border-color: #d9534f;
-  }
-
-  .panel-red > .panel-heading {
-      border-color: #d9534f;
-      color: #fff;
-      background-color: #d9534f;
-  }
-
-  .panel-red > a {
-      color: #d9534f;
-  }
-
-  .panel-red > a:hover {
-      color: #b52b27;
-  }
-
-  .panel-yellow {
-      border-color: #f0ad4e;
-  }
-
-  .panel-yellow > .panel-heading {
-      border-color: #f0ad4e;
-      color: #fff;
-      background-color: #f0ad4e;
-  }
-
-  .panel-yellow > a {
-      color: #f0ad4e;
-  }
-
-  .panel-yellow > a:hover {
-      color: #df8a13;
-  }
   .panel-header{
     border-color: #337ab7;
       color: #fff;
@@ -248,7 +180,6 @@
       padding:0px 15px;
   }
   .panel-body{
-  background-color:powderblue;
   }
   .control-label{
     color:blue;
@@ -260,12 +191,7 @@
   .table{
     background-color: white;
   }
-  .modal-header{
-    border-color: #337ab7;
-      color: #fff;
-      background-color: #337ab7;
-      padding:0px 15px;
-  }
+
   .tablecss{
     background-color: #337ab7;
   }
@@ -345,57 +271,36 @@
       </div>
     </nav>
 
-              <br/>
-              <br/>
-<div class="container col-lg-offset-1 col-lg-3 ">
-    <h2 style="color:blue">Station Area</h2>
-    <br/>
-  <table id="users" class="table table-bordered table-hover table-highlight">
+<div class="container">
+  <br/>
+  <br/>
+    <div class="row">
+        <div class="col-lg-8 col-md-offset-1 col-md-8 col-md-offset-1">
+            <div class="panel panel-primary">
+                <div class="panel panel-header"><h3>Change Station Area</h3></div>
+				<form class="form-horizontal" role="form" method="POST" action="">
+                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-    <thead class="tablecss" style="color:white">
+                <div class="panel panel-body">
+                    <div class="form-group">
+						<label class="col-md-4 control-label" for="stationarea">Station Area</label>
+						<div class="col-md-6">
+							<input type="text" class="form-control" name="stationarea" value="{{ Input::old('stationarea', $station->stationarea) }}">
+						</div>
+					</div>
 
-        <tr>
-
-          <th>Station Area Names</th>
-          <th>Action</th>
-        </tr>
-
-    </thead>
-    <tbody>
-      @foreach($station as $stations)
-      <tr>
-      <td>{{$stations->stationarea}}</td>
-      <td><a href="{{ route('update/station', $stations->id) }}">Edit </a>||
-        <a href="{{ route('delete/station',$stations->id) }}">Delete</a></td>
-      @endforeach
-    </tr>
-    </tbody>
-
-  </table>
-
+					<div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-sign-in"></i> Submit
+                                </button>
+							</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="container col-lg-8 ">
-
-  <br/>
-  <br/>
-  <br/>
-  <form class="form-horizontal col-lg-12 col-md-12 " method="post" action="{{ url('/station') }}">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <h2 class="col-lg-offset-1 "style="color:blue">Add Station Area</h2>
-    <div class="col-lg-8 col-md-8 col-sm-8 ">
-      <label class="control-label col-lg-4 col-md-4 col-sm-4" for="stationarea" style="color:inherit">Station Area</label>
-      <div class="col-lg-8 col-md-8 col-sm-8 ">
-          <input type="text" class="form-control" name="stationarea" id="stationarea" >
-      </div>
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-10 ">
-      <br/>
-      <div class="col-lg-1 col-lg-offset-4">
-        <button type="submit" class="btn btn-info btn-sm" >ADD</button>
-      </div>
-    </div>
-  </div>
 
 </body>
 

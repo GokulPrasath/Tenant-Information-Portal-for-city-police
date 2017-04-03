@@ -7,11 +7,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/jquery.dataTables.min.css" rel="stylesheet">
-
+  <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet">
   <script src="js/jquery.js"></script>
 
   <script src="js/jquery.dataTables.min.js"></script>
-
+  <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="css/navbar.css" rel="stylesheet">
@@ -129,7 +129,7 @@ $(document).ready(function() {
                "serverSide": true,
 
                "ajax": "{{ route('adminreport.getposts') }}",
-
+              
 
                "columns": [
 
@@ -143,18 +143,14 @@ $(document).ready(function() {
 
                    {data: 'email', name: 'email'},
 
-
                ],
-               "buttons": [
-       'copy', 'csv', 'excel', 'pdf', 'print'
-   ]
+
 
            });
 
        });
 
 </script>
-
 </body>
 
 </html>

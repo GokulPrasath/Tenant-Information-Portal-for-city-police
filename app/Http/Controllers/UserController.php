@@ -11,6 +11,7 @@ use Redirect;
 use Datatables;
 use Auth;
 use Intervention\Image\Facades\Image as Image;
+use App\DataTables\UsersDataTable;
 class UserController extends Controller
 {
     //

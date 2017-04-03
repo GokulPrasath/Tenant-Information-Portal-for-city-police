@@ -53,7 +53,7 @@
     <div class="col-sm-10 col-md-10 col-lg-10">
     </div>
     <div class="col-sm-1 col-md-1 col-lg-1">
-      <button type="submit" class="btn btn-info btn-md">Submit</button>
+      <button type="submit" class="btn btn-info btn-md"><i class="fa fa-btn fa-sign-in"></i>Submit</button>
     </div>
     <br/>
     <br/>

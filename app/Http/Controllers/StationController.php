@@ -49,4 +49,19 @@ public function getDelete($stationId)
               $station=Station::all();
 		return view('station',compact('station'));
 	}
+	public function getEdit($stationId)
+    {
+       $station = Station::find($stationId);
+
+            return view('stationedit',compact('station'));
+
+    }
+	public function postEdit($stationId)
+    {
+        $station = Station::find($stationId);
+           $station->stationarea=e(Input::get('stationarea'));
+            $station->save();
+              $station=Station::all();
+		return view('station',compact('station'));
+	}
 }
